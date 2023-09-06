@@ -21,25 +21,7 @@ public class Test {
 	}
 
 	// methods
-	public void scoreMovement(int movementID, int points, String remarks) {
-		// movementID will be needed later when a collection of movements are a part of
-		// a test
-		
-		// think about this: should this be a method in the Movement class instead? 
-		movement.setPoints(points);
-		movement.setRemarks(remarks);
-		movement.setTotalPoints();
-	}
 
-	public void scoreCollectiveMark(String name, int points, String remarks) {
-		// name will be needed later when a collection of collective marks are a part of
-		// a test
-		
-		// think about this: should this be a method in the CollectiveMark class instead? 
-		collectiveMarks.setPoints(points);
-		collectiveMarks.setRemarks(remarks);
-		collectiveMarks.setTotalPoints();
-	}
 
 	public int calculateMaxPoints() {
 		// this will need to loop thru all movements and collective marks to get the
@@ -92,7 +74,7 @@ public class Test {
 		} else {
 			int sum = 0;
 
-			sum += movement.getTotalPoints() + collectiveMarks.getTotalPoints();
+			sum += movement.calculateTotalPoints() + collectiveMarks.calculateTotalPoints();
 
 			this.finalScorePoints = sum;
 		}
@@ -134,7 +116,8 @@ public class Test {
 				+ errorCount + ", finalScorePoints=" + finalScorePoints + ", finalScorePercent=" + finalScorePercent
 				+ ", isEliminated=" + isEliminated + "]";
 	}
-	
+
+
 	
 
 }
